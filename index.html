@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLO STOREX — Premium Brawl Stars Boosting & Carry Services</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Space+Grotesk:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==========================================
+           1. CORE VARIABLES & STYLING
+           ========================================== */
+        :root {
+            --bg-dark: #08090C;
+            --bg-card: rgba(15, 17, 23, 0.85);
+            --bg-card-hover: rgba(22, 25, 35, 0.95);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-red: rgba(239, 35, 60, 0.4);
+            
+            --primary-red: #EF233C;
+            --primary-red-glow: rgba(239, 35, 60, 0.5);
+            --accent-white: #FFFFFF;
+            --text-gray: #94A3B8;
+
+            --cf-orange: #F38020;
+            --cf-green: #10B981;
+            
+            --font-main: 'Outfit', sans-serif;
+            --font-heading: 'Space Grotesk', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--accent-white);
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(239, 35, 60, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 80% 60%, rgba(255, 255, 255, 0.02) 0%, transparent 40%);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--primary-red); border-radius: 4px; }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ==========================================
+           2. NAVBAR
+           ========================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8, 9, 12, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 14px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .brand-logo .solo { color: var(--primary-red); text-shadow: 0 0 12px var(--primary-red-glow); }
+        .brand-logo .storex { color: var(--accent-white); }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.25s ease;
+        }
+        .nav-links a:hover { color: var(--primary-red); }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cf-badge-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(243, 128, 32, 0.1);
+            border: 1px solid rgba(243, 128, 32, 0.3);
+            color: var(--cf-orange);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .cf-badge-header:hover {
+            background: rgba(243, 128, 32, 0.2);
+            box-shadow: 0 0 10px rgba(243, 128, 32, 0.3);
+        }
+
+        .pulse-dot {
+            width: 7px;
+            height: 7px;
+            background: var(--cf-green);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--cf-green);
+            animation: pulse 1.8s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        .btn-discord {
+            background: linear-gradient(135deg, #EF233C 0%, #A4161A 100%);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 0 15px var(--primary-red-glow);
+            transition: all 0.3s ease;
+            border: none;
+        }
+        .btn-discord:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px var(--primary-red-glow);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ==========================================
+           3. HERO SECTION
+           ========================================== */
+        .hero {
+            padding: 160px 0 90px;
+            text-align: center;
+            position: relative;
+        }
+
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(239, 35, 60, 0.1);
+            border: 1px solid var(--border-red);
+            color: var(--primary-red);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 3.6rem;
+            line-height: 1.15;
+            font-weight: 800;
+            max-width: 850px;
+            margin: 0 auto 20px;
+        }
+        .hero-title span {
+            color: var(--primary-red);
+            text-shadow: 0 0 20px var(--primary-red-glow);
+        }
+
+        .hero-subtitle {
+            color: var(--text-gray);
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto 35px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+        }
+
+        .stat-box h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent-white);
+            font-family: var(--font-heading);
+        }
+        .stat-box p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        /* ==========================================
+           4. PRICE CALCULATOR & SERVICES WIDGET
+           ========================================== */
+        .calc-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 35px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .calc-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .calc-tab {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-gray);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .calc-tab.active, .calc-tab:hover {
+            background: var(--primary-red);
+            color: #fff;
+            border-color: var(--primary-red);
+            box-shadow: 0 0 12px var(--primary-red-glow);
+        }
+
+        .calc-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            font-weight: 600;
+        }
+
+        .input-group select, .input-group input[type="range"] {
+            width: 100%;
+            padding: 12px;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: #fff;
+            font-family: var(--font-main);
+            outline: none;
+        }
+        .input-group select option { background: #08090C; color: #fff; }
+
+        .price-output {
+            background: rgba(239, 35, 60, 0.08);
+            border: 1px solid var(--border-red);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+        .price-val {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            font-family: var(--font-heading);
+            margin: 10px 0;
+        }
+
+        /* Services Grid */
+        .section-padding { padding: 90px 0; }
+        .section-header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .section-title span { color: var(--primary-red); }
+        .section-desc { color: var(--text-gray); margin-top: 8px; font-size: 0.95rem; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 28px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .service-card:hover {
+            border-color: var(--border-red);
+            background: var(--bg-card-hover);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .card-top { margin-bottom: 20px; }
+        .card-icon {
+            font-size: 2.2rem;
+            color: var(--primary-red);
+            margin-bottom: 16px;
+        }
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .card-list {
+            list-style: none;
+            color: var(--text-gray);
+            font-size: 0.88rem;
+        }
+        .card-list li {
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card-list li i { color: var(--primary-red); font-size: 0.75rem; }
+
+        /* Steps */
+        .steps-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .step-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 30px;
+            position: relative;
+        }
+        .step-num {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        /* Reviews */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .review-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 22px;
+        }
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .stars { color: #FFC107; font-size: 0.85rem; }
+
+        /* FAQ Accordion */
+        .faq-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 18px 24px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            padding: 0 24px;
+        }
+        .faq-item.active .faq-answer {
+            padding: 0 24px 18px 24px;
+            max-height: 200px;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+            color: var(--primary-red);
+        }
+
+        /* Team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .team-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+        .team-avatar {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: rgba(239, 35, 60, 0.15);
+            border: 2px solid var(--primary-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+            font-size: 1.5rem;
+            color: var(--primary-red);
+        }
+
+        /* Cloudflare Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-overlay.open { display: flex; }
+        
+        .cf-modal {
+            background: #0D0F14;
+            border: 1px solid rgba(243, 128, 32, 0.4);
+            border-radius: 16px;
+            width: 90%;
+            max-width: 520px;
+            padding: 30px;
+            box-shadow: 0 0 40px rgba(243, 128, 32, 0.2);
+            position: relative;
+        }
+        .cf-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-gray);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        .cf-modal-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 18px;
+            margin-bottom: 20px;
+        }
+        .cf-modal-header i { font-size: 2.2rem; color: var(--cf-orange); }
+        .cf-modal-title { font-family: var(--font-heading); font-weight: 800; font-size: 1.2rem; }
+        .cf-status-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba(255,255,255,0.06);
+            font-size: 0.88rem;
+        }
+        .cf-status-row span { color: var(--text-gray); }
+        .cf-status-val { font-weight: 700; color: var(--cf-green); display: flex; align-items: center; gap: 6px; }
+
+        /* Floating Controls */
+        .floating-action {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+        }
+
+        .floating-cf-badge {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            z-index: 999;
+            background: rgba(13, 15, 20, 0.9);
+            border: 1px solid rgba(243, 128, 32, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 8px 14px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0;
+            background: #040507;
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 0.88rem;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+        .social-icons a {
+            color: var(--text-gray);
+            font-size: 1.2rem;
+            transition: color 0.25s;
+        }
+        .social-icons a:hover { color: var(--primary-red); }
+
+        .footer-security-bar {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.78rem;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.4rem; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #08090C;
+                flex-direction: column;
+                padding: 20px;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .nav-links.show { display: flex; }
+            .mobile-toggle { display: block; }
+            .hero-stats { flex-direction: column; gap: 20px; }
+            .calc-body { grid-template-columns: 1fr; }
+            .floating-cf-badge { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="brand-logo">
+                <span class="solo">SOLO</span>
+                <span class="storex">STOREX</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#calculator">Fiyat Hesapla</a></li>
+                <li><a href="#services">Hizmetler</a></li>
+                <li><a href="#how-it-works">Nasıl Çalışır?</a></li>
+                <li><a href="#reviews">Yorumlar</a></li>
+                <li><a href="#faq">SSS</a></li>
+                <li><a href="#team">Ekip</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="cf-badge-header" onclick="toggleCFModal()">
+                    <div class="pulse-dot"></div>
+                    <i class="fa-solid fa-shield-halved"></i> Cloudflare Protected
+                </div>
+                <a href="https://discord.gg/Sa84GNHCUn" target="_blank" class="btn-discord">
+                    <i class="fa-brands fa-discord"></i> Sipariş Ver
+                </a>
+                <button class="mobile-toggle" onclick="toggleMobileNav()"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="verified-badge">
+                <i class="fa-solid fa-shield-halved"></i> 100% Güvenilir
+            </div>
+            <h1 class="hero-title">Brawl Stars Hizmetleri <span>Boost Carry</span></h1>
+            <p class="hero-subtitle">Kupa (Trophies), Ranked, Winstreak ve Özel Brawler Push Çözümleri. %100 Hesap Güvenliği Garantisi.</p>
+            
+            <a href="https://discord.gg/Sa84GNHCUn" target="_blank" class="btn-discord" style="padding: 14px 28px; font-size: 1rem;">
+                <i class="fa-solid fa-ticket"></i> Sipariş Talebi Oluştur
+            </a>
+
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <h3 id="orderCount">150+</h3>
+                    <p>Tamamlanan Sipariş</p>
+                </div>
+                <div class="stat-box">
+                    <h3>5.0 ★</h3>
+                    <p>Müşteri Memnuniyeti</p>
+                </div>
+                <div class="stat-box">
+                    <h3>&lt; 10 Dk</h3>
+                    <p>Hızlı Başlangıç Süresi</p>
+                </div>
+                <div class="stat-box">
+                    <h3>100%</h3>
+                    <p>Cloudflare & SSL Koruma</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE PRICE CALCULATOR -->
+    <section id="calculator" class="section-padding" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Canlı Fiyat <span>Hesaplama</span></h2>
+                <p class="section-desc">Almak istediğiniz hizmeti seçin ve tahmini tutarı anında görüntüleyin.</p>
+            </div>
+
+            <div class="calc-wrapper">
+                <div class="calc-tabs">
+                    <button class="calc-tab active" onclick="switchTab('trophy')">Kupa Push</button>
+                    <button class="calc-tab" onclick="switchTab('ranked')">Ranked Mod</button>
+                    <button class="calc-tab" onclick="switchTab('winstreak')">Winstreak</button>
+                    <button class="calc-tab" onclick="switchTab('rank30')">Rank 30/35</button>
+                </div>
+
+                <div class="calc-body">
+                    <div class="calc-controls" id="calcControls">
+                        <!-- Dynamic Input Controls Powered by JS -->
+                    </div>
+                    <div class="price-output">
+                        <p style="font-size: 0.9rem; color: var(--text-gray);">Tahmini Toplam Tutar</p>
+                        <div class="price-val" id="priceDisplay">₺150</div>
+                        <p style="font-size: 0.8rem; color: var(--cf-green); margin-bottom: 15px;"><i class="fa-solid fa-shield-check"></i> %100 İade & Ban Garantili</p>
+                        <a href="https://discord.gg/Sa84GNHCUn" target="_blank" class="btn-discord" style="width: 100%; justify-content: center;">
+                            <i class="fa-brands fa-discord"></i> Hemen Discord'dan Al
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES (BRAWLCARRY STYLE) -->
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ayrıcalıklı <span>Hizmetlerimiz</span></h2>
+                <p class="section-desc">Hedeflediğiniz konuma en kısa sürede ve yüksek galibiyet oranıyla ulaşın.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1: Trophies -->
+                <div class="service-card">
+                    <div class="card-top">
+                        <i class="fa-solid fa-trophy card-icon"></i>
+                        <h3 class="card-title">Kupa (Trophies)</h3>
+                        <ul class="card-list">
+                            <li><i class="fa-solid fa-check"></i> Herhangi bir Savaşçı / Kupa</li>
+                            <li><i class="fa-solid fa-check"></i> Günlük ilerleme raporu</li>
+                            <li><i class="fa-solid fa-check"></i> Solo veya Duo Carry seçeneği</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2: Ranked -->
+                <div class="service-card">
+                    <div class="card-top">
+                        <i class="fa-solid fa-ranking-star card-icon"></i>
+                        <h3 class="card-title">Ranked Push</h3>
+                        <ul class="card-list">
+                            <li><i class="fa-solid fa-check"></i> Bronz'dan Ustalar Seviyesine</li>
+                            <li><i class="fa-solid fa-check"></i> Pro oyuncularla takım imkanı</li>
+                            <li><i class="fa-solid fa-check"></i> Hızlı rank yükseltme</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 3: Winstreak -->
+                <div class="service-card">
+                    <div class="card-top">
+                        <i class="fa-solid fa-fire card-icon"></i>
+                        <h3 class="card-title">Winstreak Boost</h3>
+                        <ul class="card-list">
+                            <li><i class="fa-solid fa-check"></i> İstenilen galibiyet serisi</li>
+                            <li><i class="fa-solid fa-check"></i> En yüksek harita & karakter seçimi</li>
+                            <li><i class="fa-solid fa-check"></i> Kesintisiz zafer garantisi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 4: Account / Custom -->
+                <div class="service-card">
+                    <div class="card-top">
+                        <i class="fa-solid fa-user-shield card-icon"></i>
+                        <h3 class="card-title">Özel Brawler Rank</h3>
+                        <ul class="card-list">
+                            <li><i class="fa-solid fa-check"></i> Brawler Rank 30 / 35 Kasma</li>
+                            <li><i class="fa-solid fa-check"></i> Özel görev & etkinlik tamamlama</li>
+                            <li><i class="fa-solid fa-check"></i> Bütçe dostu paketler</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS (3 STEPS) -->
+    <section id="how-it-works" class="section-padding" style="background: rgba(0,0,0,0.3);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">3 Adımda <span>Hedefe Ulaşın</span></h2>
+                <p class="section-desc">Sipariş süreci son derece kolay, hızlı ve şeffaftır.</p>
+            </div>
+
+            <div class="steps-wrapper">
+                <div class="step-box">
+                    <div class="step-num">01.</div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Talep Oluşturun</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">Discord sunucumuza gelerek ticket açın ve hedefinizi iletin.</p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-num">02.</div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Fiyat & Süre Onayı</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">Size en uygun fiyat teklifi ve tahmini başlama/bitiş süresi aktarılır.</p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-num">03.</div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Güvenli Başlangıç</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">İşleminiz başlar ve ilerleme anlık bilgilendirme ile size iletilir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Müşteri <span>Yorumları</span></h2>
+                <p class="section-desc">Bizi tercih eden oyuncuların gerçek değerlendirmeleri.</p>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <strong>Ahmet K.</strong>
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--text-gray);">"Ranked modunda Ustalar ligine 2 günde çıkardılar. Hesabım tamamen güvendeydi, teşekkürler BOOST CARRY!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <strong>Eren T.</strong>
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--text-gray);">"Rank 35 Mortis siparişi verdim, Duo carry ile birlikte oynadık. Booster son derece yetenekli ve kibardı."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <strong>Burak M.</strong>
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--text-gray);">"Fiyatlar piyasaya göre çok uygun ve sipariş verdikten 5 dakika sonra oyuna başladılar. Kesinlikle tavsiye ederim."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="section-padding" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sıkça Sorulan <span>Sorular</span></h2>
+                <p class="section-desc">Aklınıza takılan soruların yanıtları.</p>
+            </div>
+
+            <div class="faq-wrapper">
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span>Hesabım güvende mi? Ban riski var mı?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Evet, tamamen güvendedir. Tüm boosting işlemlerimiz VPN ve güvenli bağlantı protokolleri kullanılarak yapılmaktadır. İsterseniz "Duo Carry" seçeneği ile hesabınızı vermeden bizimle aynı takımda oynayarak da boost alabilirsiniz.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span>Sipariş verdikten ne kadar sonra başlanır?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Siparişiniz Discord ticket üzerinden onaylandıktan sonra ortalama 5 - 15 dakika içerisinde uygun booster ekibimize atanır ve işlem başlatılır.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span>Ödeme yöntemleri nelerdir?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        IBAN / Havale / EFT, Papara, Ininal, Kredi Kartı ve Kripto gibi çeşitli güvenli ödeme seçeneklerini desteklemekteyiz.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM / ABOUT -->
+    <section id="team" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">SOLO STOREX <span>Ekibi</span></h2>
+                <p class="section-desc">Siparişlerinizi yöneten ve hizmet veren yetkili kadromuz.</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar"><i class="fa-solid fa-crown"></i></div>
+                    <h3 style="font-size: 1.1rem; font-weight: 700;">SOLO STOREX</h3>
+                    <p style="color: var(--primary-red); font-size: 0.82rem; font-weight: 600;">Kurucu & Yönetici</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar"><i class="fa-solid fa-gamepad"></i></div>
+                    <h3 style="font-size: 1.1rem; font-weight: 700;">Pro Booster Team</h3>
+                    <p style="color: var(--text-gray); font-size: 0.82rem;">Top Tier Global Oyuncular</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOATING ACTIONS -->
+    <div class="floating-action">
+        <a href="https://discord.gg/Sa84GNHCUn" target="_blank" class="btn-discord">
+            <i class="fa-brands fa-discord"></i> Canlı Destek
+        </a>
+    </div>
+
+    <div class="floating-cf-badge" onclick="toggleCFModal()">
+        <div class="pulse-dot"></div>
+        <i class="fa-solid fa-shield-halved" style="color: var(--cf-orange);"></i>
+        <span>Cloudflare Verified SSL</span>
+    </div>
+
+    <!-- CLOUDFLARE SECURITY MODAL -->
+    <div class="modal-overlay" id="cfModal">
+        <div class="cf-modal">
+            <button class="cf-modal-close" onclick="toggleCFModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="cf-modal-header">
+                <i class="fa-solid fa-shield-virus"></i>
+                <div>
+                    <div class="cf-modal-title">Cloudflare Security Center</div>
+                    <div style="font-size: 0.78rem; color: var(--text-gray);">Live Edge Network Verification & Protection</div>
+                </div>
+            </div>
+            
+            <div class="cf-status-row">
+                <span>Bağlantı Durumu:</span>
+                <div class="cf-status-val"><i class="fa-solid fa-circle-check"></i> Güvenli (TLS 1.3)</div>
+            </div>
+            <div class="cf-status-row">
+                <span>DDoS Koruması (Layer 7):</span>
+                <div class="cf-status-val"><i class="fa-solid fa-shield"></i> Aktif & Filtreleniyor</div>
+            </div>
+            <div class="cf-status-row">
+                <span>WAF Tehdit Seviyesi:</span>
+                <div class="cf-status-val" style="color: #38BDF8;"><i class="fa-solid fa-lock"></i> Düşük (0 Risk)</div>
+            </div>
+            <div class="cf-status-row">
+                <span>SSL / TLS Sertifikası:</span>
+                <div class="cf-status-val"><i class="fa-solid fa-certificate"></i> Cloudflare 256-bit</div>
+            </div>
+            <div class="cf-status-row">
+                <span>Sunucu Gecikmesi:</span>
+                <div class="cf-status-val" style="color: #38BDF8;">12 ms (Anycast CDN)</div>
+            </div>
+
+            <div style="margin-top: 20px; font-size: 0.78rem; color: var(--text-gray); text-align: center; background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                <i class="fa-solid fa-user-lock"></i> Tüm veri transferleriniz Cloudflare Enterprise Firewall arkasında koruma altındadır.
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="social-icons">
+                <a href="https://youtube.com/@solostorex" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://tiktok.com/@solostorex" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://instagram.com/solostorex" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitch.tv/solostorex" target="_blank"><i class="fa-brands fa-twitch"></i></a>
+            </div>
+            <p>&copy; 2026 <strong>SOLO STOREX</strong>. Tüm Hakları Saklıdır.</p>
+            
+            <div class="footer-security-bar">
+                <span><i class="fa-solid fa-shield-halved" style="color: var(--cf-orange);"></i> Cloudflare Protected</span>
+                <span><i class="fa-solid fa-lock" style="color: var(--cf-green);"></i> SSL 256-Bit Encrypted</span>
+                <span><i class="fa-solid fa-bolt" style="color: #FFC107;"></i> 99.9% Uptime</span>
+            </div>
+            <p style="font-size: 0.78rem; color: #555; margin-top: 10px;">Brawl Stars is a registered trademark of Supercell. SOLO STOREX is not affiliated with Supercell.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Tab Calculator State
+        let currentTab = 'trophy';
+
+        const calcConfigs = {
+            trophy: `
+                <div class="input-group">
+                    <label>Mevcut Kupa: <span id="currentTrophyVal">5000</span></label>
+                    <input type="range" min="0" max="40000" step="500" value="5000" oninput="updateTrophyCalc(this.value, 'current')">
+                </div>
+                <div class="input-group">
+                    <label>Hedef Kupa: <span id="targetTrophyVal">10000</span></label>
+                    <input type="range" min="1000" max="50000" step="500" value="10000" oninput="updateTrophyCalc(this.value, 'target')">
+                </div>
+            `,
+            ranked: `
+                <div class="input-group">
+                    <label>Mevcut Rank</label>
+                    <select id="currentRank" onchange="calculateRankedPrice()">
+                        <option value="1">Bronz</option>
+                        <option value="2">Gümüş</option>
+                        <option value="3" selected>Altın</option>
+                        <option value="4">Elmas</option>
+                        <option value="5">Efsanevi</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Hedef Rank</label>
+                    <select id="targetRank" onchange="calculateRankedPrice()">
+                        <option value="2">Gümüş</option>
+                        <option value="3">Altın</option>
+                        <option value="4">Elmas</option>
+                        <option value="5">Efsanevi</option>
+                        <option value="6" selected>Ustalar (Masters)</option>
+                    </select>
+                </div>
+            `,
+            winstreak: `
+                <div class="input-group">
+                    <label>İstenen Galibiyet Serisi: <span id="streakVal">10 Maç</span></label>
+                    <input type="range" min="5" max="50" step="5" value="10" oninput="updateStreakCalc(this.value)">
+                </div>
+            `,
+            rank30: `
+                <div class="input-group">
+                    <label>Hedef Brawler Seviyesi</label>
+                    <select id="brawlerRank" onchange="calculateBrawlerPrice()">
+                        <option value="25">Rank 25 (750 Kupa)</option>
+                        <option value="30" selected>Rank 30 (1000 Kupa)</option>
+                        <option value="35">Rank 35 (1250 Kupa)</option>
+                    </select>
+                </div>
+            `
+        };
+
+        let currentTrophy = 5000;
+        let targetTrophy = 10000;
+
+        function switchTab(tab) {
+            currentTab = tab;
+            document.querySelectorAll('.calc-tab').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('calcControls').innerHTML = calcConfigs[tab];
+            
+            if (tab === 'trophy') calculateTrophyPrice();
+            if (tab === 'ranked') calculateRankedPrice();
+            if (tab === 'winstreak') updateStreakCalc(10);
+            if (tab === 'rank30') calculateBrawlerPrice();
+        }
+
+        function updateTrophyCalc(val, type) {
+            if (type === 'current') {
+                currentTrophy = parseInt(val);
+                document.getElementById('currentTrophyVal').innerText = val;
+            } else {
+                targetTrophy = parseInt(val);
+                document.getElementById('targetTrophyVal').innerText = val;
+            }
+            calculateTrophyPrice();
+        }
+
+        function calculateTrophyPrice() {
+            let diff = targetTrophy - currentTrophy;
+            if (diff <= 0) {
+                document.getElementById('priceDisplay').innerText = "₺0";
+                return;
+            }
+            let price = Math.round((diff / 500) * 45);
+            document.getElementById('priceDisplay').innerText = "₺" + price;
+        }
+
+        function calculateRankedPrice() {
+            let cur = parseInt(document.getElementById('currentRank').value);
+            let tar = parseInt(document.getElementById('targetRank').value);
+            let diff = tar - cur;
+            if (diff <= 0) {
+                document.getElementById('priceDisplay').innerText = "₺0";
+                return;
+            }
+            let price = diff * 80;
+            document.getElementById('priceDisplay').innerText = "₺" + price;
+        }
+
+        function updateStreakCalc(val) {
+            document.getElementById('streakVal').innerText = val + " Maç";
+            let price = val * 12;
+            document.getElementById('priceDisplay').innerText = "₺" + price;
+        }
+
+        function calculateBrawlerPrice() {
+            let rank = document.getElementById('brawlerRank').value;
+            let price = 150;
+            if (rank === '30') price = 350;
+            if (rank === '35') price = 850;
+            document.getElementById('priceDisplay').innerText = "₺" + price;
+        }
+
+        function toggleFaq(element) {
+            element.classList.toggle('active');
+        }
+
+        function toggleMobileNav() {
+            document.getElementById('navLinks').classList.toggle('show');
+        }
+
+        function toggleCFModal() {
+            document.getElementById('cfModal').classList.toggle('open');
+        }
+
+        // Initialize default tab
+        switchTab('trophy');
+    </script>
+</body>
+</html>
